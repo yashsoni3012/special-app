@@ -6,10 +6,10 @@ import Questions from './Questions';
 import Gift1 from './Gift1';
 import Gift2 from './Gift2';
 import Gift3 from './Gift3';
-import Celebration from './Celebration';
+import Celebration from '../src/Celebration';
 import LoveTimeline from '../src/LoveTimeline ';
-import LoveCoupons from './LoveCoupons';
-import VoiceMessage from './VoiceMessage';
+import LoveCoupons from '../src/Lovecoupons';
+import VoiceMessage from '../src/Voicemessage'
 import FinalClosure from '../src/Finalclosure';
 
 function App() {
