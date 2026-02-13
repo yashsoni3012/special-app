@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Heart, Play, Pause, Volume2, ArrowLeft, Sparkles } from 'lucide-react';
 
 // Import your voice message audio file
-// import voiceMessage from './assets/voice-message.mp3';
+import voiceMessage from './assets/myVoice.mp4';
 
 export default function VoiceMessage() {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ export default function VoiceMessage() {
   const [duration, setDuration] = useState(0);
 
   // Replace with your actual voice message audio file
-  const audioSrc = ''; // Add your voice message path here
+  const audioSrc = voiceMessage; // Add your voice message path here
 
   const togglePlay = () => {
     if (audioRef.current) {

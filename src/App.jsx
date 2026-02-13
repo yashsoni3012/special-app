@@ -11,10 +11,13 @@ import LoveTimeline from '../src/LoveTimeline ';
 import LoveCoupons from '../src/Lovecoupons';
 import VoiceMessage from '../src/Voicemessage'
 import FinalClosure from '../src/Finalclosure';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   return (
+    <>
     <Router>
+        <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/proposal" element={<Proposal />} />
@@ -30,6 +33,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
+    </>
   );
 }
 
