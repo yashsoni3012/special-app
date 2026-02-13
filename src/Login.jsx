@@ -111,6 +111,7 @@ export default function Login() {
               onChange={(e) => setUsername(e.target.value)}
               className="w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-pink-400 focus:ring-4 focus:ring-pink-100 outline-none transition-all"
               placeholder="mylove"
+              autoComplete="off"
               required
             />
           </div>
@@ -119,14 +120,34 @@ export default function Login() {
             <label className="block text-sm font-medium text-gray-700 mb-2">
               🔐 Our Secret Promise
             </label>
+            
+            {/* Method 1: Using input type="text" with password mask (most reliable) */}
             <input
+              type="text"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-pink-400 focus:ring-4 focus:ring-pink-100 outline-none transition-all"
+              placeholder="forever"
+              autoComplete="off"
+              style={{ 
+                WebkitTextSecurity: password ? 'disc' : 'none',
+                textSecurity: password ? 'disc' : 'none'
+              }}
+              required
+            />
+            
+            {/* Alternative Method 2: Using password type with multiple attributes */}
+            {/* <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-pink-400 focus:ring-4 focus:ring-pink-100 outline-none transition-all"
               placeholder="forever"
+              autoComplete="new-password"
+              readOnly
+              onFocus={(e) => e.target.removeAttribute('readonly')}
               required
-            />
+            /> */}
           </div>
 
           {showError && (
@@ -149,7 +170,7 @@ export default function Login() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0) rotate(0deg); }
           50% { transform: translateY(-30px) rotate(10deg); }
